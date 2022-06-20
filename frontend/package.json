@@ -11,11 +11,15 @@
     "build:style": "npx tailwindcss -i ./src/styles/index.css -o ./dist/output.css --watch"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.4",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
