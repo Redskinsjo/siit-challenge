@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SetStateAction, Dispatch } from "react";
 import { EmployeeType } from "../types";
 
 const EmployeeCard = ({
@@ -6,10 +6,17 @@ const EmployeeCard = ({
   name,
   avatar_url,
   position,
-  service_ids,
-}: EmployeeType) => {
+  last,
+  setSelectedService,
+}: EmployeeType & {
+  last: boolean;
+  setSelectedService: Dispatch<SetStateAction<number>>;
+}) => {
   return (
-    <div className="h-[200px] w-[180px] flex flex-col items-center bg-slate-100 mr-[20px] my-4 hover:bg-slate-200 border-[1px] border-solid border-slate-200">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className={last ? "emp-card flex-1" : "emp-card mr-[20px] "}
+    >
       <img src={avatar_url} alt={name + id} />
       <h1 className="font-bold text-lg">{name}</h1>
       <h3 className="font-semibold text-sm">{position}</h3>

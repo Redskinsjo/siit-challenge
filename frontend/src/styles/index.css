@@ -13,4 +13,16 @@ body,
   .icon {
     @apply h-[26px] w-[26px] mr-2 cursor-pointer;
   }
+  .render-employees {
+    @apply h-full flex justify-center w-[820px] cursor-pointer;
+  }
+  .render-services {
+    @apply h-full flex justify-center w-[531px] cursor-pointer;
+  }
+  .emp-card {
+    @apply h-[200px] w-[178px] flex flex-col items-center bg-slate-100 my-4  border-[1px] border-solid border-slate-200 cursor-default;
+  }
+  .serv-card {
+    @apply h-[200px] w-[82px] flex flex-col justify-between items-center bg-slate-100 my-4 hover:bg-[#040440] hover:text-white border-[1px] border-solid border-slate-200 cursor-pointer;
+  }
 }
