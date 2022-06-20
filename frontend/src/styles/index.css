@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html,
+body,
+#root {
   font-family: Arvo;
+  height: 100%;
 }
