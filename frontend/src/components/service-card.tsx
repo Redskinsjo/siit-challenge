@@ -17,6 +17,14 @@ const ServiceCard = ({
   last: boolean;
   setSelectedService: Dispatch<SetStateAction<number>>;
 }) => {
+  const formatPrice = (price) => {
+    const split = String(price).split("");
+    if (split.length > 2) {
+      return split[0] + "," + split.join("").slice(1);
+    }
+    return "0," + price;
+  };
+
   return (
     <div
       onClick={(e) => {
@@ -28,6 +36,10 @@ const ServiceCard = ({
       <img src={logo_url} alt={name + id} className="w-[64px] min-h-[64px]" />
       <h1 className="font-bold text-lg">{name}</h1>
       <h3 className="font-semibold text-sm">
+        {formatPrice(
+          price.flat_cost +
+            price.cost_per_user * (users - price.nb_users_included)
+        )}
         <span className="text-[9px] font-medium">$/user</span>
       </h3>
       <a
